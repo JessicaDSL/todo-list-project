@@ -1,27 +1,16 @@
-import { Todo } from "../../types/todo";
+import { useContext } from 'react';
+import { TodoContext } from "../../context/todo-context";
 import ListItemTodo from "../list-item-todo/list-item-todo";
 import { ListTodoContainer } from "./styles";
 
+function ListTodo() {
 
-interface TodoListProps {
-  updateTodo: (todo: Todo) => void,
-  deleteTodo: (todo: Todo) => void,
-  todos: Todo[]
-}
-
-
-function ListTodo(props: TodoListProps) {
-
-  const { updateTodo, deleteTodo, todos } = props
+  const { todos } = useContext(TodoContext) 
 
   return (
     <ListTodoContainer>
       {todos?.map((todo) => (
-        <ListItemTodo
-          deleteTodo={deleteTodo}
-          updateTodo={updateTodo}
-          todo={todo}
-        />
+        <ListItemTodo todo={todo} key={todo.id}/>
       ))}
     </ListTodoContainer>
   );

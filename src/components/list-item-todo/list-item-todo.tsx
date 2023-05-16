@@ -1,16 +1,17 @@
+import { useContext } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import { AiOutlineCheck } from "react-icons/ai";
 import { Todo } from '../../types/todo';
 import { ListItemContainer, ButtonTodoItem, ButtonContainer } from './styles';
+import { TodoContext } from '../../context/todo-context';
 
 interface TodoItemProps {
-  todo: Todo;
-  updateTodo: (todo: Todo) => void,
-  deleteTodo: (todo: Todo) => void,
+  todo: Todo
 }
 
+function ListItemTodo({todo}: TodoItemProps) {
 
-function ListItemTodo({ todo, updateTodo, deleteTodo }: TodoItemProps) {
+  const { updateTodo, deleteTodo } = useContext(TodoContext)
 
   function handleToggleCompleted(todo: Todo) {
     const newTodo = { ...todo, completed: !todo.completed }
@@ -22,7 +23,7 @@ function ListItemTodo({ todo, updateTodo, deleteTodo }: TodoItemProps) {
   }
 
   return (
-    <ListItemContainer key={todo.id}>
+    <ListItemContainer>
       {todo.title}
       <ButtonContainer>
         <ButtonTodoItem onClick={() => handleToggleCompleted(todo)}>

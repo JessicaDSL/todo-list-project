@@ -1,15 +1,12 @@
-import { useRef } from "react";
-import { ButtonAddTodo, Container, InputTodo } from './styles'
-import { Todo } from "../../types/todo";
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { useRef, useContext } from "react";
+import { ButtonAddTodo, Container, InputTodo } from './styles';
+import { TodoContext } from "../../context/todo-context";
 
-
-interface TodoInputProps {
-  addTodo: (todo: Todo) => void
-}
-
-function FormTodo({addTodo}: TodoInputProps) {
-
+function FormTodo() {
+  const {addTodo} = useContext(TodoContext)
   const tituloRef = useRef<HTMLInputElement>(null);
+  
   function handleAddTodo() {
     const todo = {
       id: Math.random() * 1000,
@@ -21,7 +18,6 @@ function FormTodo({addTodo}: TodoInputProps) {
   }
 
   function clearInputTodo() {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     tituloRef.current!.value = ''
   }
 
