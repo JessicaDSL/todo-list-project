@@ -15,7 +15,7 @@ function ListItemTodo({todo}: TodoItemProps) {
 
   function handleToggleCompleted(todo: Todo) {
     const newTodo = { ...todo, completed: !todo.completed }
-   updateTodo(newTodo)
+    updateTodo(newTodo)
   }
 
   function handleDeleteTodo(todo: Todo) {

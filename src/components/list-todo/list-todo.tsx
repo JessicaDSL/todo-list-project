@@ -5,12 +5,20 @@ import { ListTodoContainer } from "./styles";
 
 function ListTodo() {
 
-  const { todos } = useContext(TodoContext) 
+  const { currentIndex } = useContext(TodoContext)
+  /*{todosLocalStorage.length > 0 ?
+        todos?.map((todo) => (
+          <ListItemTodo todo={todo} key={todo.id} />
+        )) :
+        todos?.map((todo) => (
+          <ListItemTodo todo={todo} key={todo.id} />
+        ))
+      }*/
 
   return (
     <ListTodoContainer>
-      {todos?.map((todo) => (
-        <ListItemTodo todo={todo} key={todo.id}/>
+      {currentIndex?.map((todo) => (
+        <ListItemTodo todo={todo} key={todo.id} />
       ))}
     </ListTodoContainer>
   );
