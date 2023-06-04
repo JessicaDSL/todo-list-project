@@ -4,9 +4,7 @@ import { Container, List } from './styles'
 
 function Pagination() {
 
-  const { todos, itensPerPage, currentPage, setPageValue } = useContext(TodoContext)
-
-  const pages = Math.ceil(todos.length / itensPerPage);
+  const { currentPage, setPageValue, pages } = useContext(TodoContext)
 
   function handleValuePage(e: any) {
     setPageValue(e.target.value)
@@ -19,8 +17,6 @@ function Pagination() {
   function handlePrevPage(e: any) {
     setPageValue(e.target.value);
   }
-
-
 
   return (
     <Container>
