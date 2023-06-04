@@ -5,4 +5,7 @@
 - [x] criar um json server pra criar um api, ao inves de buscar pelo local storage, buscr pelo json server
 - [ ] add as listas do local storage tbm
 - [ ] criar um hook para local storagee
-- [ ] colocar a lista para ir de baixo pra cima os itens
+- [x] colocar a lista para ir de baixo pra cima os itens / decrescente
+- [ ] criar uma pasta de utils
+- [ ] criar função para listar em ordem alfabetica
+- [ ] criar função para listar em ordem de completed
