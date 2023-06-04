@@ -7,5 +7,5 @@
 - [ ] criar um hook para local storagee
 - [x] colocar a lista para ir de baixo pra cima os itens / decrescente
 - [ ] criar uma pasta de utils
-- [ ] criar função para listar em ordem alfabetica
-- [ ] criar função para listar em ordem de completed
+- [x] criar função para listar em ordem alfabetica
+- [x] criar função para listar em ordem de completed
