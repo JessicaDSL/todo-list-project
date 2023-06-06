@@ -4,8 +4,15 @@
 - [ ] criar um componente que vai permitir alternar entre um e outro
 - [x] criar um json server pra criar um api, ao inves de buscar pelo local storage, buscr pelo json server
 - [x] add as listas do local storage tbm
+- [ ] parar pra entender o Array.from(Array(pages))
 - [ ] criar um hook para local storagee
 - [x] colocar a lista para ir de baixo pra cima os itens / decrescente
 - [x] criar uma pasta de utils
 - [x] criar função para listar em ordem alfabetica
 - [x] criar função para listar em ordem de completed
+- [ ] toda vez que clicar na pagina ele precisa dar fetch e pegar somente o da pagina, carregou ele só exibe dez
+- [ ] conferir se no json serve da pra colocar no inicio, se nao, vou manter no codigo como espelho
+- [ ] se esta add um todo ali, e ja tem 10 itens na tela, ele tem que ir pra proxima pagina(mudar automaticamente)
+- [ ] montar uma lista do que seria interessante colocar no todo
+- [ ] estudar com calma depois git stash e git add -p
+- [ ] fazer um eccomerce mais elaborado ( )

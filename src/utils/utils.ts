@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { Todo } from "../types/todo"
 
 function getAlphabeticalOrder(listTodos: any) {
@@ -11,12 +10,10 @@ function getAlphabeticalOrder(listTodos: any) {
     }
     return 0
   })
-  console.log(listTodos);
 }
 
 function getOrderByCompleteTodo(listTodos: any) {
   listTodos.sort((a: Todo, b: Todo) => Number(b.completed) - Number(a.completed))
-  console.log(listTodos);
 }
 
 export {getAlphabeticalOrder, getOrderByCompleteTodo}

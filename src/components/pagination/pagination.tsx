@@ -1,10 +1,12 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { TodoContext } from "../../context/todo-context";
 import { Container, List } from './styles'
 
 function Pagination() {
 
-  const { currentPage, setPageValue, pages } = useContext(TodoContext)
+  const { currentPage, setPageValue } = useContext(TodoContext)
+
+  const page = 10;
 
   function handleValuePage(e: any) {
     setPageValue(e.target.value)
@@ -22,11 +24,11 @@ function Pagination() {
     <Container>
       <button value={currentPage - 1} onClick={(e) => handlePrevPage(e)}>Anterior</button>
       <List>
-        {Array.from(Array(pages), (_, index) => {
+        {Array.from(Array(page), (_, index) => {
           return <li key={index}><button value={index} onClick={(e) => handleValuePage(e)}>{index + 1}</button></li>
         })}
       </List>
-      <button value={pages - 1} onClick={(e) => handleLastPage(e)}>Ultimo</button>
+      <button value={page - 1} onClick={(e) => handleLastPage(e)}>Ultimo</button>
     </Container>
   )
 }

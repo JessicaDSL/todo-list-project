@@ -6,15 +6,11 @@ import Pagination from '../pagination/pagination';
 
 function ListTodoPagination() {
 
-  const { currentPage, todos, itensPerPage } = useContext(TodoContext)
-
-  const startIndex = currentPage * itensPerPage//fatiar o array de itens., na page 1, vai ser 1*10
-  const endIndex = startIndex + itensPerPage //meu start index é 0, e meus itens por paginas é 10, eu to na 1 
-  const currentIndex = todos.slice(startIndex, endIndex)
+  const { todos } = useContext(TodoContext)
 
   return (
     <ListTodoContainer>
-      {currentIndex?.map((todo) => (
+      {todos?.map((todo) => (
         <ListItemTodo todo={todo} key={todo.id} />
       ))}
       <Pagination />
