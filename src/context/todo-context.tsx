@@ -2,6 +2,7 @@
 import { createContext, useState, useEffect } from 'react';
 import { Todo } from '../types/todo';
 import { getAlphabeticalOrder, getOrderByCompleteTodo } from '../utils/utils';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 interface TodoContextType {
   todos: Todo[],
@@ -32,6 +33,7 @@ export const TodoProvider = (props: any) => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [itensPerPage, setItensPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(0);
+  useLocalStorage(todos, setTodos)
 
   const getTodoByPage = async () => {
     const response = await fetch(`http://localhost:3000/todolist?_page=${currentPage}&_limit=${itensPerPage}`);
@@ -82,7 +84,7 @@ export const TodoProvider = (props: any) => {
     setCurrentPage(Number(value) + 1);
   }
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (todos.length > 0) {
       localStorage.setItem('todos', JSON.stringify(todos) ?? '[]');
     }
@@ -92,7 +94,7 @@ export const TodoProvider = (props: any) => {
     const localTodos = JSON.parse(localStorage.getItem('todos') ?? '[]');
     setTodos(localTodos);
   }, [])
-
+*/
 
   return (
     <Provider value={{ todos, deleteTodo, updateTodo, addTodo, itensPerPage, setPageValue, currentPage }}>
