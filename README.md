@@ -12,7 +12,7 @@
 - [x] criar função para listar em ordem de completed
 - [x] toda vez que clicar na pagina ele precisa dar fetch e pegar somente o da pagina, carregou ele só exibe dez
 - [ ] conferir se no json serve da pra colocar no inicio, se nao, vou manter no codigo como espelho
-- [ ] se esta add um todo ali, e ja tem 10 itens na tela, ele tem que ir pra proxima pagina(mudar automaticamente)
+- [x] se esta add um todo ali, e ja tem 10 itens na tela, ele tem que ir pra proxima pagina(mudar automaticamente)
 - [ ] montar uma lista do que seria interessante colocar no todo
 - [ ] estudar com calma depois git stash e git add -p
 - [ ] fazer um eccomerce mais elaborado ( )
